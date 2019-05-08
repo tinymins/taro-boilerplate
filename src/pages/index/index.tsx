@@ -1,9 +1,8 @@
-import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
-import './index.scss'
+import Taro, { Component, Config } from '@tarojs/taro';
+import { View, Text } from '@tarojs/components';
+import './index.scss';
 
 export default class Index extends Component {
-
   /**
    * 指定config的类型声明为: Taro.Config
    *
@@ -11,25 +10,26 @@ export default class Index extends Component {
    * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
-  config: Config = {
-    navigationBarTitleText: '首页'
+  public config: Config = {
+    navigationBarTitleText: '首页',
   }
 
-  componentWillMount () { }
+  public componentWillMount(): void { }
 
-  componentDidMount () { }
+  public componentDidMount(): void { }
 
-  componentWillUnmount () { }
+  public componentWillUnmount(): void { }
 
-  componentDidShow () { }
+  public componentDidShow(): void { }
 
-  componentDidHide () { }
+  public componentDidHide(): void { }
 
-  render () {
+  public render(): JSX.Element {
+    let i = 1;
     return (
-      <View className='index'>
-        <Text>Hello world!</Text>
+      <View className="index">
+        <Text onClick={() => { i += 1; }}>Hello world! {i}</Text>
       </View>
-    )
+    );
   }
 }
