@@ -14,6 +14,10 @@ export default class Index extends Component {
     navigationBarTitleText: '首页',
   }
 
+  public state = {
+    i: 1,
+  }
+
   public componentWillMount(): void { }
 
   public componentDidMount(): void { }
@@ -25,10 +29,9 @@ export default class Index extends Component {
   public componentDidHide(): void { }
 
   public render(): JSX.Element {
-    let i = 1;
     return (
       <View className="index">
-        <Text onClick={() => { i += 1; }}>Hello world! {i}</Text>
+        <Text onClick={() => this.setState({ i: this.state.i + 1 })}>Hello world! {this.state.i}</Text>
       </View>
     );
   }
