@@ -1,3 +1,14 @@
+/**
+ * This file is part of taro-boilerplate.
+ * @link     : https://zhaiyiming.com/
+ * @author   : Emil Zhai (root@derzh.com)
+ * @modifier : Emil Zhai (root@derzh.com)
+ * @copyright: Copyright (c) 2018 TINYMINS.
+ */
+const path = require('path');
+
+const resolve = s => path.join(__dirname, s);
+
 // http://eslint.org/docs/user-guide/configuring
 module.exports = {
   parser: '@typescript-eslint/parser',
@@ -14,6 +25,17 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'airbnb-base',
   ],
+  // check if imports actually resolve
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@/', resolve('src/')],
+        ],
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+      }
+    },
+  },
     // add your custom rules here
   'rules': {
     // eslint rules
