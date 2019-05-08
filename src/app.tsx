@@ -1,7 +1,7 @@
-import Taro, { Component, Config } from '@tarojs/taro'
-import Index from './pages/index'
+import Taro, { Component, Config } from '@tarojs/taro';
+import Index from './pages/index';
 
-import './app.scss'
+import './app.scss';
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -10,7 +10,6 @@ import './app.scss'
 // }
 
 class App extends Component {
-
   /**
    * 指定config的类型声明为: Taro.Config
    *
@@ -18,33 +17,33 @@ class App extends Component {
    * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
-  config: Config = {
+  public config: Config = {
     pages: [
-      'pages/index/index'
+      'pages/index/index',
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
-    }
+      navigationBarTextStyle: 'black',
+    },
   }
 
-  componentDidMount () {}
+  public componentDidMount(): void {}
 
-  componentDidShow () {}
+  public componentDidShow(): void {}
 
-  componentDidHide () {}
+  public componentDidHide(): void {}
 
-  componentDidCatchError () {}
+  public componentDidCatchError(): void {}
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render () {
+  public render(): JSX.Element {
     return (
       <Index />
-    )
+    );
   }
 }
 
-Taro.render(<App />, document.getElementById('app'))
+Taro.render(<App />, document.getElementById('app'));
