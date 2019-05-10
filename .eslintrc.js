@@ -7,8 +7,6 @@
  */
 const path = require('path');
 
-const resolve = s => path.join(__dirname, s);
-
 // http://eslint.org/docs/user-guide/configuring
 module.exports = {
   parser: '@typescript-eslint/parser',
@@ -30,7 +28,7 @@ module.exports = {
     'import/resolver': {
       alias: {
         map: [
-          ['@/', resolve('src/')],
+          ['@/', path.resolve(__dirname, '..', 'src/')],
         ],
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
       }
