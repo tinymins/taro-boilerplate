@@ -1,3 +1,5 @@
+const path = require('path');
+
 const config = {
   projectName: 'taro-boilerplate',
   date: '2019-5-7',
@@ -25,6 +27,9 @@ const config = {
     }
   },
   defineConstants: {
+  },
+  alias: {
+    '@/': path.resolve(__dirname, '..', 'src/'),
   },
   copy: {
     patterns: [
