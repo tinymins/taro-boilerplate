@@ -1,8 +1,20 @@
 import Taro, { Component, Config } from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
+import { connect } from '@tarojs/redux';
+import { User } from '@/store/user';
 import './index.scss';
 
-export default class Index extends Component {
+interface IStateProps {
+  user: User;
+}
+
+interface IDispatchProps {}
+interface IOwnProps {}
+
+// @connect<IStateProps, IDispatchProps, IOwnProps>((state): IStateProps => ({
+//   user: state.user.user as User,
+// }))
+class Index extends Component {
   /**
    * 指定config的类型声明为: Taro.Config
    *
@@ -12,6 +24,10 @@ export default class Index extends Component {
    */
   public config: Config = {
     navigationBarTitleText: '首页',
+  }
+
+  public props: {
+    user: User;
   }
 
   public state = {
@@ -29,10 +45,18 @@ export default class Index extends Component {
   public componentDidHide(): void { }
 
   public render(): JSX.Element {
+    console.log(this);
+    const userId = this.props.user ? this.props.user.id : 'null';
     return (
       <View className="index">
-        <Text onClick={() => this.setState({ i: this.state.i + 1 })}>Hello world! {this.state.i}</Text>
+        <Text onClick={() => this.setState({ i: this.state.i + 1 })}>
+          Hello world! {this.state.i} Current user: {userId}
+        </Text>
       </View>
     );
   }
 }
+
+export default connect<IStateProps, IDispatchProps, IOwnProps>((state): IStateProps => ({
+  user: state.user.user as User,
+}))(Index);

@@ -17,12 +17,14 @@
     "dev:h5": "taro build --watch --type h5",
     "dev:rn": "taro build --watch --type rn",
     "start": "yarn && yarn run dev:weapp",
-    "lint": "eslint --ext .js,.ts,.tsx --cache --cache-location node_modules/.cache/.eslintcache --format 'node_modules/eslint-friendly-formatter' src"
+    "lint": "eslint --fix --ext .js,.ts,.tsx --cache --cache-location node_modules/.cache/.eslintcache --format 'node_modules/eslint-friendly-formatter' src"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@tarojs/async-await": "^1.2.26",
     "@tarojs/components": "1.2.26",
+    "@tarojs/redux": "^1.2.26",
     "@tarojs/router": "1.2.26",
     "@tarojs/taro": "1.2.26",
     "@tarojs/taro-alipay": "1.2.26",
@@ -30,8 +32,14 @@
     "@tarojs/taro-swan": "1.2.26",
     "@tarojs/taro-tt": "1.2.26",
     "@tarojs/taro-weapp": "1.2.26",
+    "dva": "^2.6.0-beta.3",
+    "dva-core": "^1.6.0-beta.2",
+    "dva-immer": "^0.4.2",
+    "dva-loading": "^3.0.2",
     "nerv-devtools": "^1.3.9",
-    "nervjs": "^1.3.9"
+    "nervjs": "^1.3.9",
+    "react": "^16.8.6",
+    "taro-dva": "^1.0.0"
   },
   "devDependencies": {
     "@tarojs/plugin-babel": "1.2.26",
