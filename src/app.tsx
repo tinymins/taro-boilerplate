@@ -1,5 +1,5 @@
 import Taro, { Component, Config } from '@tarojs/taro';
-import Index from './pages/index';
+import Index from './views/index';
 
 import './app.scss';
 
@@ -19,7 +19,7 @@ class App extends Component {
    */
   public config: Config = {
     pages: [
-      'pages/index/index',
+      'views/index/index',
     ],
     window: {
       backgroundTextStyle: 'light',
