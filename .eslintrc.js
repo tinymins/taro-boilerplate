@@ -28,7 +28,7 @@ module.exports = {
     'import/resolver': {
       alias: {
         map: [
-          ['@/', path.resolve(__dirname, '..', 'src/')],
+          ['@', path.resolve(__dirname, 'src')],
         ],
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
       }
@@ -367,7 +367,7 @@ module.exports = {
     '@typescript-eslint/explicit-member-accessibility': 'error',
     '@typescript-eslint/generic-type-naming': 'error',
     '@typescript-eslint/indent': ['error', 2, { 'SwitchCase': 1 }],
-    '@typescript-eslint/interface-name-prefix': 'error',
+    '@typescript-eslint/interface-name-prefix': ['error', 'always'],
     '@typescript-eslint/member-delimiter-style': 'error',
     '@typescript-eslint/member-naming': 'error',
     '@typescript-eslint/member-ordering': 'off',
