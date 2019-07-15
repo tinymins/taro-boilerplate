@@ -1,5 +1,7 @@
 import Taro, { Component, Config } from '@tarojs/taro';
-import Index from './views/index';
+import { Provider } from '@tarojs/redux';
+import store from '@/store';
+import Index from '@/views/index';
 
 import './app.scss';
 
@@ -41,7 +43,9 @@ class App extends Component {
   // 请勿修改此函数
   public render(): JSX.Element {
     return (
-      <Index />
+      <Provider store={store}>
+        <Index />
+      </Provider>
     );
   }
 }
