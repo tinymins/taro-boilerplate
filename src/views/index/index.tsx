@@ -5,14 +5,14 @@ import { IUser } from '@/store/user';
 import './index.scss';
 
 interface IStateProps {
-  user: User;
+  user: IUser;
 }
 
 interface IDispatchProps {}
 interface IOwnProps {}
 
 // @connect<IStateProps, IDispatchProps, IOwnProps>((state): IStateProps => ({
-//   user: state.user.user as User,
+//   user: state.user.user as IUser,
 // }))
 class Index extends Component {
   /**
@@ -58,5 +58,5 @@ class Index extends Component {
 }
 
 export default connect<IStateProps, IDispatchProps, IOwnProps>((state): IStateProps => ({
-  user: state.user.user as User,
+  user: state.user.user as IUser,
 }))(Index);
